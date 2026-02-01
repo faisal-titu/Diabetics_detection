@@ -93,7 +93,7 @@ Open the local URL shown in the terminal.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 diabetes-app/
