@@ -1,0 +1,8 @@
+# ingore gradio directory/
+# Ignore all files in the flagged directory
+.gradio/
+
+# ignore all the zip files
+*.zip
+
+
