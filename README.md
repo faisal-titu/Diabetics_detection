@@ -106,6 +106,6 @@ diabetes-app/
 ## Deployment
 
 Hugging Face Space URL: *[https://huggingface.co/spaces/faisaltitu/Diabetics_Prediction](https://huggingface.co/spaces/faisaltitu/Diabetics_Prediction)* \
-GitHub Repository: *([https://github.com/faisal-titu/Diabetics_detection](https://github.com/faisal-titu/Diabetics_detection))* \
-Google Colab Notebook: *(add your link here)*
+GitHub Repository: *[https://github.com/faisal-titu/Diabetics_detection](https://github.com/faisal-titu/Diabetics_detection)* \
+Google Colab Notebook: *[https://colab.research.google.com/drive/1BB4oZiwWI3cqWkOKapqCu93vCGRsu8_X?usp=sharing](https://colab.research.google.com/drive/1BB4oZiwWI3cqWkOKapqCu93vCGRsu8_X?usp=sharing)*
 
