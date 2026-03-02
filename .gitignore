@@ -21,3 +21,10 @@ _inspect_model.py
 __pycache__/
 *.pyc
 
+# ignore all .pkl files
+*.pkl
+
+# ignore all json, tsv files
+*.json
+*.tsv
+*.csv

@@ -1,43 +1,8 @@
-# ── Gradio & web server ──────────────────────────────────────────────────────
-gradio==6.3.0
-gradio_client==2.0.3
-fastapi==0.135.1
-starlette==0.52.1
-uvicorn==0.41.0
-
-# ── Gradio dependencies ──────────────────────────────────────────────────────
-aiofiles==24.1.0
-anyio==4.12.1
-ffmpy==1.0.0
-httpx==0.28.1
-httpcore==1.0.9
-h11==0.16.0
-huggingface_hub==1.5.0
-hf-xet==1.3.2
-safehttpx==0.1.7
-python-multipart==0.0.22
-pydantic==2.12.5
-pydantic_core==2.41.5
-orjson==3.11.7
-python-dateutil==2.9.0.post0
-pydub==0.25.1
-semantic-version==2.10.0
-tomlkit==0.13.3
-typer==0.24.1
-typer-slim==0.24.1
-shellingham==1.5.4
-rich==14.3.3
-Pygments==2.19.2
-markdown-it-py==4.0.0
-mdurl==0.1.2
-Jinja2==3.1.6
-MarkupSafe==3.0.3
-
 # ── Core scientific ──────────────────────────────────────────────────────────
 numpy==2.4.2
 pandas==2.3.3
 scipy==1.17.1
-scikit-learn==1.4.2
+scikit-learn==1.6.1
 joblib==1.5.3
 threadpoolctl==3.6.0
 
