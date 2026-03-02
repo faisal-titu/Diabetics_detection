@@ -1,3 +1,14 @@
+---
+title: Diabetes Risk Predictor
+emoji: 🩺
+colorFrom: indigo
+colorTo: purple
+sdk: gradio
+sdk_version: "6.3.0"
+app_file: app.py
+pinned: false
+---
+
 # 🩺 Diabetes Risk Predictor
 
 An end-to-end Machine Learning system that predicts diabetes risk from clinical measurements. The pipeline combines **PyCaret AutoML**, a **Calibrated Soft-Voting Ensemble** of five tuned base learners, and a modern **Gradio** web interface deployed on Hugging Face Spaces.

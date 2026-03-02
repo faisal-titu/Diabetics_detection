@@ -9,3 +9,15 @@
 
 
 logs.log
+
+# ignore the catboost_info directory
+catboost_info/
+
+model_utils.py
+
+_inspect_model.py
+
+# ignore all the pycache/.pyc filees
+__pycache__/
+*.pyc
+
