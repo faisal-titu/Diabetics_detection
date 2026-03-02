@@ -5,4 +5,7 @@
 # ignore all the zip files
 *.zip
 
+.github/
 
+
+logs.log
