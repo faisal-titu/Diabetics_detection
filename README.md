@@ -23,6 +23,61 @@ An end-to-end Machine Learning system that predicts diabetes risk from clinical 
 | 💻 GitHub Repository | [faisal-titu/Diabetics_detection](https://github.com/faisal-titu/Diabetics_detection) |
 ---
 
+## 🏗️ Project Architecture
+
+```mermaid
+flowchart TD
+    subgraph DATA["📦 Data"]
+        A[("archive/diabetes.csv\n768 rows · 9 features")]
+    end
+
+    subgraph PREPROCESS["🔧 Preprocessing  (notebook)"]
+        B["Rename DPF column\nDiabetesPedigreeFunction → DPF"]
+        C["Zero imputation\nreplace 0 with column mean"]
+        D["QuantileTransformer\nn_quantiles=100, normal output"]
+    end
+
+    subgraph PYCARET["🤖 PyCaret AutoML  (training only)"]
+        E["setup()  preprocess=False"]
+        F["compare_models()  top-5 by AUC\nexclude: lgbm, xgb, svm, knn …"]
+        G1["CatBoostClassifier"]
+        G2["RandomForestClassifier"]
+        G3["LogisticRegression"]
+        G4["LinearDiscriminantAnalysis"]
+        G5["GradientBoostingClassifier"]
+        H["tune_model()  optimize=AUC\nfor each of top-5"]
+        I["blend_models(method='soft')"]
+        J["calibrate_model()  sigmoid"]
+        K["finalize_model()  full dataset"]
+    end
+
+    subgraph DEPLOY_PKL["🔄 HF-Compatible Pipeline  (model_utils.py)"]
+        L["RenameDPF transformer\n· renames DPF col\n· imputes zeros with fitted means"]
+        M["Strip GBC → no CyHalfBinomialLoss\n(Cython ABI fix for sklearn 1.6)"]
+        N[("diabetes_model.pkl\nsklearn.pipeline.Pipeline\n  rename_impute → model")]
+    end
+
+    subgraph APP["🌐 Gradio App  (app.py)"]
+        O["8 clinical sliders\nPregnancies, Glucose, BP …"]
+        P["predict_diabetes()\nDataFrame → predict + predict_proba"]
+        Q["Result card + Probability bars\ndark theme · Quick Examples"]
+    end
+
+    subgraph HF["🤗 Hugging Face Spaces"]
+        R["Python 3.13 · sklearn 1.6.1\ngradio 6.3.0"]
+    end
+
+    A --> B --> C --> D --> E --> F
+    F --> G1 & G2 & G3 & G4 & G5
+    G1 & G2 & G3 & G4 & G5 --> H --> I --> J --> K
+    K --> L --> M --> N
+    N --> P
+    O --> P --> Q
+    APP --> HF
+```
+
+---
+
 ## 📊 Model Performance
 
 The final deployed model is a **Calibrated Soft-Voting Ensemble** selected after comparing three ensemble strategies:
